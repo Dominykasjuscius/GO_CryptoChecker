@@ -9,7 +9,7 @@ import (
 
 var rules []RulesObj
 
-const path = "C:\\Users\\ddomi\\hello\\CryptoTask\\src\\configs\\rules.json"
+const path = "../configs/rules.json"
 
 type RulesObj struct {
 	Id    int     `json:"crypto_id"`
