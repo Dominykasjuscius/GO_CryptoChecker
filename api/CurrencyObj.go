@@ -7,11 +7,17 @@ import (
 	"strconv"
 )
 
+/*
+	Struct for storing JSON data
+*/
 type CurrencyObj struct {
 	Name  string `json:"name"`
 	Price string `json:"price_usd"`
 }
 
+/*
+	Converts the given JSON obtain from URL to a CurrencyObj Struct
+*/
 func (r CurrencyObj) ConvertJSONtoCurr(id int) []CurrencyObj {
 	var obj []CurrencyObj
 	var link = "https://api.coinlore.net/api/ticker/?id=" + strconv.Itoa(id)
@@ -30,6 +36,10 @@ func (r CurrencyObj) ConvertJSONtoCurr(id int) []CurrencyObj {
 	return obj
 }
 
+/*
+	Compares the the rules obtained from a local JSON file to the prices
+	obtained from URL
+*/
 func (r CurrencyObj) CompareData() string {
 
 	var curr API = new(CurrencyObj)
